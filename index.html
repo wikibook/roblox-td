@@ -53,6 +53,36 @@ header.hero{
 .hero .stat{background:#17181C;color:#FFF6DC;padding:6px 13px;border-radius:999px;font-size:13px;font-weight:700}
 .hero .stat b{color:var(--yellow)}
 
+/* ---------- 내려받기 버튼 ---------- */
+.hero .dlrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.dl{display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+  background:#17181C;color:#FFF6DC;padding:11px 18px 11px 15px;border-radius:12px;
+  box-shadow:0 3px 0 rgba(0,0,0,.35);transition:transform .12s}
+.dl:hover{transform:translateY(-1px)}
+.dl:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.35)}
+.dl.alt{background:var(--blue);color:#fff;box-shadow:0 3px 0 var(--blue-dp)}
+.dl.alt:active{box-shadow:0 1px 0 var(--blue-dp)}
+.dl.yt{background:#FFFDF6;color:#17181C;box-shadow:0 3px 0 rgba(0,0,0,.32)}
+.dl.yt .dl-ic{color:#E8402C;font-size:15px}
+.dl.yt .dl-tx em{opacity:.6}
+.dl-ic{font-size:19px;line-height:1}
+.dl-tx{display:flex;flex-direction:column;line-height:1.28}
+.dl-tx b{font-size:14.5px;font-weight:800}
+.dl-tx em{font-style:normal;font-size:11.5px;opacity:.72;font-weight:600;margin-top:1px}
+
+/* ---------- 안내 블록 ---------- */
+.guide{background:var(--panel);border-bottom:1px solid var(--line)}
+.guide .wrap{padding-top:22px;padding-bottom:22px}
+.guide-lead{margin:0 0 12px;font-size:14.5px;font-weight:700}
+.guide-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.guide-list li{display:flex;align-items:flex-start;gap:10px;
+  background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+.guide-list .g-ic{font-size:17px;line-height:1.35;flex:0 0 auto}
+.guide-list div{min-width:0}
+.guide-list b{display:block;color:var(--ink);font-size:14px;font-weight:800;margin-bottom:2px}
+.guide-list span:not(.g-ic){font-size:13.3px;color:var(--muted);line-height:1.5}
+
 /* ---------- toolbar ---------- */
 .toolbar{position:sticky;top:0;z-index:30;background:var(--panel);border-bottom:1px solid var(--line);
   box-shadow:0 2px 12px rgba(23,24,28,.06)}
@@ -155,6 +185,7 @@ footer a{color:var(--blue-dp);font-weight:700}
 .toTop.show{display:block}
 .toTop:active{transform:translateY(2px);box-shadow:0 1px 0 #17181C}
 @media (max-width:560px){
+  .dl{flex:1 1 100%;justify-content:flex-start}
   .ch-head{padding:13px}.ch-body{padding:4px 13px 12px}
   .vbtn{width:100%;justify-content:center}
 }
@@ -171,8 +202,33 @@ footer a{color:var(--blue-dp);font-weight:700}
       <span class="stat">강의 영상 <b>32개</b></span>
       <span class="stat">예제 코드 <b>66개</b></span>
     </div>
+    <div class="dlrow">
+      <a class="dl" href="examples.zip" download>
+        <span class="dl-ic">📦</span>
+        <span class="dl-tx"><b>예제 파일 내려받기</b><em>전체 66개 · ZIP</em></span>
+      </a>
+      <a class="dl alt" href="online-appendix.pdf" download>
+        <span class="dl-ic">📕</span>
+        <span class="dl-tx"><b>온라인 부록 내려받기</b><em>부록 A·B·C · PDF</em></span>
+      </a>
+      <a class="dl yt" href="https://www.youtube.com/%EC%98%90%EB%A1%AFYellot" target="_blank" rel="noopener">
+        <span class="dl-ic">▶</span>
+        <span class="dl-tx"><b>옐롯(Yellot) 유튜브 채널 바로가기</b><em>전체 강의 영상 보기</em></span>
+      </a>
+    </div>
   </div>
 </header>
+
+<section class="guide">
+  <div class="wrap">
+    <p class="guide-lead">이 페이지에서는 다음 세 가지를 확인할 수 있습니다.</p>
+    <ul class="guide-list">
+      <li><span class="g-ic">📦</span><div><b>예제 파일</b><span>장별 예제 파일을 한 번에 내려받을 수 있습니다.</span></div></li>
+      <li><span class="g-ic">🎬</span><div><b>동영상 강의</b><span>각 장의 실습 과정을 영상으로 확인할 수 있습니다.</span></div></li>
+      <li><span class="g-ic">📕</span><div><b>온라인 부록</b><span>로블록스 스튜디오의 기초를 다루는 PDF 파일입니다.</span></div></li>
+    </ul>
+  </div>
+</section>
 
 <div class="toolbar">
   <div class="inner">
